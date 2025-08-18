@@ -1,0 +1,27 @@
+{
+    "compilerOptions": {
+        "allowSyntheticDefaultImports": true,
+        "forceConsistentCasingInFileNames": true,
+        "jsx": "react-jsx",
+        "module": "ESNext",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "skipLibCheck": true,
+        "strict": true,
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["./resources/js/*"],
+            "@/Components/*": ["./resources/js/Components/*"],
+            "@/Pages/*": ["./resources/js/Pages/*"],
+            "@/Layouts/*": ["./resources/js/Layouts/*"],
+            "@/hooks/*": ["./resources/js/hooks/*"],
+            "@/lib/*": ["./resources/js/lib/*"],
+            "@/store/*": ["./resources/js/store/*"],
+            "@/data/*": ["./resources/js/data/*"],
+            "@/assets/*": ["./resources/js/assets/*"]
+        }
+    },
+    "include": [
+        "resources/js/**/*"
+    ]
+}
