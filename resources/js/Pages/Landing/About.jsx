@@ -9,7 +9,7 @@ import { stats } from "@/data/statsData";
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
+    <div className="min-h-screen bg-gradient-to-br from-[#00BFAE]/5 via-[#009A8E]/10 to-[#008B7A]/15">
       <Header />
 
       {/* Hero Section */}
@@ -29,7 +29,7 @@ export default function About() {
           <div className="grid md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">
+                <div className="text-4xl font-bold bg-gradient-to-r from-[#00BFAE] to-[#009A8E] bg-clip-text text-transparent mb-2">
                   {stat.number}
                 </div>
                 <p className="text-gray-600 font-medium">{stat.label}</p>
@@ -47,7 +47,7 @@ export default function About() {
               <h2 className="text-4xl font-bold text-gray-800 mb-6">قصتنا</h2>
               <div className="space-y-4 text-lg text-gray-600 leading-relaxed">
                 <p>
-                  بدأت فكرة EduForms عندما لاحظنا التحديات التي يواجهها المعلمون والإداريون في إعداد
+                  بدأت فكرة My Reports عندما لاحظنا التحديات التي يواجهها المعلمون والإداريون في إعداد
                   التقارير والنماذج التعليمية. كان العمل يتطلب ساعات طويلة لإنشاء تقارير بسيطة، مما يأخذ
                   من وقتهم الثمين الذي يجب أن يُركز على التدريس والتطوير.
                 </p>
@@ -78,7 +78,7 @@ export default function About() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">قيمنا ورؤيتنا</h2>
-            <p className="text-xl text-gray-600">المبادئ التي تقود عملنا وتشكل مستقبل التعليم الEduForms</p>
+            <p className="text-xl text-gray-600">المبادئ التي تقود عملنا وتشكل مستقبل التعليم الMy Reports</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
@@ -104,7 +104,7 @@ export default function About() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">فريق العمل</h2>
-            <p className="text-xl text-gray-600">الأشخاص الذين يقفون وراء نجاح EduForms</p>
+            <p className="text-xl text-gray-600">الأشخاص الذين يقفون وراء نجاح My Reports</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -117,7 +117,7 @@ export default function About() {
                     className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
                   />
                   <CardTitle className="text-xl text-gray-800">{member.name}</CardTitle>
-                  <p className="text-blue-600 font-medium">{member.role}</p>
+                  <p className="text-[#00BFAE] font-medium">{member.role}</p>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600">{member.bio}</p>
@@ -129,7 +129,7 @@ export default function About() {
       </section>
 
       {/* Mission Section */}
-      <section className="py-20 px-6 bg-gradient-to-r from-blue-600 to-purple-700 text-white">
+      <section className="py-20 px-6 bg-gradient-to-r from-[#00BFAE] to-[#009A8E] text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-6">رؤيتنا للمستقبل</h2>
           <p className="text-xl mb-8 opacity-95 leading-relaxed">
@@ -139,12 +139,12 @@ export default function About() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/signup">
-              <Button size="lg" variant="secondary" className="px-8 py-3 text-lg bg-white text-blue-600 hover:bg-gray-100 font-bold">
+              <Button size="lg" variant="secondary" className="px-8 py-3 text-lg bg-white text-[#00BFAE] hover:bg-gray-100 font-bold">
                 انضم إلى رحلتنا
               </Button>
             </Link>
             <Link href="/contact">
-              <Button variant="outline" size="lg" className="px-10 py-4 text-lg border-2 border-blue-200 hover:bg-blue-50 text-blue-600">
+              <Button variant="outline" size="lg" className="px-10 py-4 text-lg border-2 border-[#009A8E] hover:bg-[#00BFAE]/10 text-[#009A8E]">
                 تواصل معنا
               </Button>
             </Link>

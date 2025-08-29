@@ -6,7 +6,7 @@ import { Link } from "@inertiajs/react";
 import DashboardLayout from '@/Layouts/DashboardLayout';
 
 export default function Dashboard({ auth, stats }) {
-    return (
+  return (
     <DashboardLayout>
       <Head title="لوحة التحكم" />
       {/* Main Content */}
@@ -14,7 +14,7 @@ export default function Dashboard({ auth, stats }) {
         {/* Welcome Section */}
         <div className="mb-8">
           <h2 className="text-3xl font-bold text-gray-800 mb-2">
-            مرحباً بك في EduForms
+            مرحباً بك في My Reports
           </h2>
           <p className="text-gray-600">
             {auth.user.school} - {auth.user.subject}
@@ -70,7 +70,7 @@ export default function Dashboard({ auth, stats }) {
           <Card className="hover:shadow-lg transition-shadow cursor-pointer">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Plus className="w-5 h-5 text-blue-600" />
+                <Plus className="w-5 h-5 text-[#00BFAE]" />
                 إنشاء نموذج جديد
               </CardTitle>
             </CardHeader>
@@ -79,7 +79,7 @@ export default function Dashboard({ auth, stats }) {
                 أنشئ نموذجاً جديداً لجمع البيانات والتقارير
               </p>
               <Link href={route('forms.create')}>
-                <Button className="w-full bg-gradient-to-r from-blue-500 to-purple-600">
+                <Button className="w-full bg-gradient-to-r from-[#00BFAE] to-[#009A8E]">
                   إنشاء النموذج
                 </Button>
               </Link>
@@ -162,5 +162,5 @@ export default function Dashboard({ auth, stats }) {
         </Card>
       </main>
     </DashboardLayout>
-    );
+  );
 }

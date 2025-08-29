@@ -40,7 +40,7 @@ export default function TemplateBuilder({ value, onChange }) {
           <button
             key={b.type}
             type="button"
-            className="px-4 py-2 bg-blue-100 rounded hover:bg-blue-200"
+            className="px-4 py-2 bg-[#00BFAE]/20 rounded hover:bg-[#009A8E]/30"
             onClick={() => addBlock(b.type)}
           >
             + {b.label}
@@ -114,7 +114,7 @@ function BlockFields({ block, onChange }) {
           <button onClick={() => removeField(idx)} className="text-red-500">حذف</button>
         </div>
       ))}
-      <button type="button" className="text-blue-600" onClick={addField}>+ إضافة حقل</button>
+      <button type="button" className="text-[#00BFAE]" onClick={addField}>+ إضافة حقل</button>
     </div>
   );
 } 

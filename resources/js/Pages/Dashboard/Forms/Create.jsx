@@ -49,8 +49,8 @@ export default function CreateForm() {
         <p className="text-gray-600">قم بإنشاء نموذج جديد لجمع البيانات أو التقارير.</p>
       </div>
       <main className="max-w-4xl mx-auto px-6 py-8">
-        <Card className="shadow-xl">
-          <CardHeader className="bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-t-lg">
+        <Card className="shadow-xl border border-[#00BFAE]/20">
+          <CardHeader className="bg-gradient-to-r from-[#00BFAE] to-[#009A8E] text-white rounded-t-lg">
             <CardTitle className="text-center text-xl">إنشاء نموذج جديد</CardTitle>
           </CardHeader>
           <CardContent className="p-8">
@@ -58,7 +58,7 @@ export default function CreateForm() {
               {/* Basic Information */}
               <div className="space-y-4">
                 <h3 className="text-lg font-semibold text-gray-800 mb-4">المعلومات الأساسية</h3>
-                
+
                 <div className="space-y-2">
                   <Label htmlFor="title" className="text-gray-700 font-medium">عنوان النموذج</Label>
                   <Input
@@ -94,20 +94,19 @@ export default function CreateForm() {
               {/* Form Type */}
               <div className="space-y-4">
                 <h3 className="text-lg font-semibold text-gray-800 mb-4">نوع النموذج</h3>
-                
+
                 <div className="grid md:grid-cols-3 gap-4">
                   {formTypes.map((type) => (
                     <div
                       key={type.value}
-                      className={`p-4 border-2 rounded-lg cursor-pointer transition-all ${
-                        data.type === type.value
-                          ? 'border-blue-500 bg-blue-50'
-                          : 'border-gray-200 hover:border-gray-300'
-                      }`}
+                      className={`p-4 border-2 rounded-lg cursor-pointer transition-all ${data.type === type.value
+                        ? 'border-[#009A8E] bg-[#00BFAE]/10'
+                        : 'border-gray-200 hover:border-gray-300'
+                        }`}
                       onClick={() => setData('type', type.value)}
                     >
                       <div className="flex items-center gap-3">
-                        <div className="text-blue-600">{type.icon}</div>
+                        <div className="text-[#00BFAE]">{type.icon}</div>
                         <div>
                           <h4 className="font-medium text-gray-800">{type.label}</h4>
                           <p className="text-sm text-gray-600">
@@ -128,7 +127,7 @@ export default function CreateForm() {
               {/* Template Selection */}
               <div className="space-y-4">
                 <h3 className="text-lg font-semibold text-gray-800 mb-4">اختيار القالب</h3>
-                
+
                 <div className="space-y-2">
                   <Label htmlFor="template" className="text-gray-700 font-medium">نوع القالب</Label>
                   <Select value={data.template} onValueChange={(value) => setData('template', value)}>
@@ -165,9 +164,9 @@ export default function CreateForm() {
                     إلغاء
                   </Button>
                 </Link>
-                <Button 
-                  type="submit" 
-                  className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700"
+                <Button
+                  type="submit"
+                  className="bg-gradient-to-r from-[#00BFAE] to-[#009A8E] hover:from-[#37a299] hover:to-[#23bbae]"
                   disabled={processing}
                 >
                   {processing ? "جاري الإنشاء..." : "إنشاء النموذج"}

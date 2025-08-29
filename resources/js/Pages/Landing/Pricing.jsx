@@ -22,7 +22,7 @@ export default function Pricing() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
+    <div className="min-h-screen bg-gradient-to-br from-[#00BFAE]/5 via-[#009A8E]/10 to-[#008B7A]/15">
       <Header />
       {/* Hero Section */}
       <section className="py-20 px-6 text-center">
@@ -75,7 +75,7 @@ export default function Pricing() {
                     ))}
                   </ul>
                   <Button
-                    className={`w-full ${plan.popular ? 'bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700' : 'bg-gray-600 hover:bg-gray-700'} text-white font-bold py-3 text-lg`}
+                    className={`w-full ${plan.popular ? 'bg-gradient-to-r from-[#00BFAE] to-[#009A8E] hover:from-[#37a299] hover:to-[#23bbae]' : 'bg-gray-600 hover:bg-gray-700'} text-white font-bold py-3 text-lg`}
                   >
                     {plan.price === "0" ? "ابدأ مجاناً" : "اختيار الباقة"}
                   </Button>
@@ -128,14 +128,14 @@ export default function Pricing() {
         </div>
       </section>
       {/* CTA Section */}
-      <section className="py-20 px-6 bg-gradient-to-r from-blue-600 to-purple-700 text-white">
+      <section className="py-20 px-6 bg-gradient-to-r from-[#00BFAE] to-[#009A8E] text-white">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-6">ابدأ رحلتك مع EduForms اليوم</h2>
+          <h2 className="text-4xl font-bold mb-6">ابدأ رحلتك مع My Reports اليوم</h2>
           <p className="text-xl mb-8 opacity-95">
-            انضم إلى آلاف المعلمين الذين وفروا الوقت والجهد مع EduForms
+            انضم إلى آلاف المعلمين الذين وفروا الوقت والجهد مع My Reports
           </p>
           <Link href="/signup">
-            <Button size="lg" variant="secondary" className="px-8 py-3 text-lg bg-white text-blue-600 hover:bg-gray-100 font-bold">
+            <Button size="lg" variant="secondary" className="px-8 py-3 text-lg bg-white text-[#00BFAE] hover:bg-gray-100 font-bold">
               ابدأ مجاناً الآن
             </Button>
           </Link>

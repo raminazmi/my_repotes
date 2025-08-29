@@ -21,13 +21,13 @@ export default function Login({ status, canResetPassword }) {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 flex items-center justify-center p-6">
+    <div className="min-h-screen bg-gradient-to-br from-[#00BFAE]/5 via-[#009A8E]/10 to-[#008B7A]/15 flex items-center justify-center p-6">
       <div className="max-w-md w-full">
         {/* Header */}
         <div className="text-center mb-8">
           <Link href="/" className="flex items-center justify-center gap-3 mb-6">
             <div className="relative">
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg">
+              <div className="w-12 h-12 bg-gradient-to-r from-[#00BFAE] to-[#009A8E] rounded-xl flex items-center justify-center shadow-lg">
                 <BookOpen className="w-7 h-7 text-white" />
               </div>
               <div className="absolute -top-1 -right-1 w-4 h-4 bg-yellow-400 rounded-full flex items-center justify-center">
@@ -35,7 +35,7 @@ export default function Login({ status, canResetPassword }) {
               </div>
             </div>
             <div>
-              <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">EduForms</h1>
+              <h1 className="text-2xl font-bold bg-gradient-to-r from-[#00BFAE] to-[#009A8E] bg-clip-text text-transparent">My Reports</h1>
               <p className="text-sm text-gray-600 font-medium">صديق المعلم والإداري</p>
             </div>
           </Link>
@@ -50,7 +50,7 @@ export default function Login({ status, canResetPassword }) {
         )}
 
         <Card className="shadow-2xl border-0">
-          <CardHeader className="bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-t-lg">
+          <CardHeader className="bg-gradient-to-r from-[#00BFAE] to-[#009A8E] text-white rounded-t-lg">
             <CardTitle className="text-center text-xl">مرحباً بعودتك</CardTitle>
           </CardHeader>
           <CardContent className="p-8">
@@ -87,8 +87,8 @@ export default function Login({ status, canResetPassword }) {
               </div>
               <div className="flex items-center justify-between">
                 <label className="flex items-center space-x-2 space-x-reverse">
-                  <input 
-                    type="checkbox" 
+                  <input
+                    type="checkbox"
                     className="rounded border-gray-300"
                     checked={data.remember}
                     onChange={(e) => setData('remember', e.target.checked)}
@@ -96,14 +96,14 @@ export default function Login({ status, canResetPassword }) {
                   <span className="text-sm text-gray-600">تذكرني</span>
                 </label>
                 {canResetPassword && (
-                  <Link href={route('password.request')} className="text-sm text-blue-600 hover:text-blue-700 font-medium">
+                  <Link href={route('password.request')} className="text-sm text-[#00BFAE] hover:text-[#009A8E] font-medium">
                     نسيت كلمة المرور؟
                   </Link>
                 )}
               </div>
-              <Button 
-                type="submit" 
-                className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 py-3 text-lg font-bold" 
+              <Button
+                type="submit"
+                className="w-full bg-gradient-to-r from-[#00BFAE] to-[#009A8E] hover:from-[#37a299] hover:to-[#23bbae] py-3 text-lg font-bold"
                 disabled={processing}
               >
                 {processing ? "جاري تسجيل الدخول..." : "تسجيل الدخول"}
@@ -112,7 +112,7 @@ export default function Login({ status, canResetPassword }) {
             <div className="mt-8 text-center">
               <p className="text-sm text-gray-600">
                 ليس لديك حساب؟{" "}
-                <Link href={route('register')} className="text-blue-600 hover:text-blue-700 font-bold">
+                <Link href={route('register')} className="text-[#00BFAE] hover:text-[#009A8E] font-bold">
                   إنشاء حساب جديد
                 </Link>
               </p>

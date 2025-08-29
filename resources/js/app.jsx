@@ -1,5 +1,5 @@
-import '../css/app.css';
 import './bootstrap';
+import '../css/app.css';
 
 import { createInertiaApp } from '@inertiajs/react';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
@@ -8,7 +8,7 @@ import { useEffect } from 'react';
 import { Provider } from 'react-redux';
 import { store } from './store/store';
 
-const appName = import.meta.env.VITE_APP_NAME || 'EduForms';
+const appName = import.meta.env.VITE_APP_NAME || 'My Reports';
 
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,
@@ -24,7 +24,7 @@ createInertiaApp({
         const AppWithProviders = () => {
             return (
                 <Provider store={store}>
-                  <App {...props} />
+                    <App {...props} />
                 </Provider>
             );
         };
@@ -32,7 +32,7 @@ createInertiaApp({
         root.render(<AppWithProviders />);
     },
     progress: {
-        color: '#3B82F6',
+        color: '#009A8E',
         showSpinner: true,
     },
 });

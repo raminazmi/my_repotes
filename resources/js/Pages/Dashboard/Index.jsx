@@ -16,7 +16,7 @@ export default function Dashboard({ auth, stats, forms }) {
   if (user.role === 'admin') {
     createFormButton = (
       <Link href={route('forms.create')}>
-        <Button className="bg-gradient-to-r from-blue-500 to-purple-600 flex items-center gap-2">
+        <Button className="bg-gradient-to-r from-[#00BFAE] to-[#009A8E] flex items-center gap-2">
           <FaPlus />
           إضافة نموذج جديد
         </Button>
@@ -31,7 +31,7 @@ export default function Dashboard({ auth, stats, forms }) {
         {/* Welcome Section */}
         <div className="mb-8">
           <h2 className="text-3xl font-bold text-gray-800 mb-2">
-            مرحباً بك في EduForms
+            مرحباً بك في My Reports
           </h2>
           <p className="text-gray-600">
             {(user.school || "")} - {(user.subject || "")}
@@ -40,7 +40,7 @@ export default function Dashboard({ auth, stats, forms }) {
 
         {/* Quick Stats */}
         <div className="grid md:grid-cols-4 gap-6 mb-8">
-          <Card className="bg-gradient-to-r from-blue-500 to-blue-600 text-white">
+          <Card className="bg-gradient-to-r from-[#00BFAE] to-[#009A8E] text-white">
             <CardHeader className="pb-2">
               <CardTitle className="text-lg flex items-center gap-2">
                 <FaRegFileAlt className="w-5 h-5" />
@@ -49,10 +49,10 @@ export default function Dashboard({ auth, stats, forms }) {
             </CardHeader>
             <CardContent>
               <div className="text-3xl font-bold">{safeStats.total_forms ?? 0}</div>
-              <p className="text-blue-100 text-sm">نموذج متاح</p>
+              <p className="text-[#00BFAE]/80 text-sm">نموذج متاح</p>
             </CardContent>
           </Card>
-          <Card className="bg-gradient-to-r from-green-500 to-green-600 text-white">
+          <Card className="bg-gradient-to-r from-[#009A8E] to-[#008B7A] text-white">
             <CardHeader className="pb-2">
               <CardTitle className="text-lg flex items-center gap-2">
                 <FaUsers className="w-5 h-5" />
@@ -61,10 +61,10 @@ export default function Dashboard({ auth, stats, forms }) {
             </CardHeader>
             <CardContent>
               <div className="text-3xl font-bold">{safeStats.total_reports ?? 0}</div>
-              <p className="text-green-100 text-sm">تقرير/شهادة</p>
+              <p className="text-[#00BFAE]/80 text-sm">تقرير/شهادة</p>
             </CardContent>
           </Card>
-          <Card className="bg-gradient-to-r from-purple-500 to-purple-600 text-white">
+          <Card className="bg-gradient-to-r from-[#008B7A] to-[#007A6B] text-white">
             <CardHeader className="pb-2">
               <CardTitle className="text-lg flex items-center gap-2">
                 <FaChartBar className="w-5 h-5" />
@@ -73,11 +73,11 @@ export default function Dashboard({ auth, stats, forms }) {
             </CardHeader>
             <CardContent>
               <div className="text-3xl font-bold">{safeStats.active_forms ?? 0}</div>
-              <p className="text-purple-100 text-sm">نموذج نشط</p>
+              <p className="text-[#00BFAE]/80 text-sm">نموذج نشط</p>
             </CardContent>
           </Card>
           {user.role === 'admin' && (
-            <Card className="bg-gradient-to-r from-orange-500 to-orange-600 text-white">
+            <Card className="bg-gradient-to-r from-[#007A6B] to-[#00695C] text-white">
               <CardHeader className="pb-2">
                 <CardTitle className="text-lg flex items-center gap-2">
                   <FaUsers className="w-5 h-5" />
@@ -86,7 +86,7 @@ export default function Dashboard({ auth, stats, forms }) {
               </CardHeader>
               <CardContent>
                 <div className="text-3xl font-bold">{safeStats.total_users ?? 0}</div>
-                <p className="text-orange-100 text-sm">مستخدم</p>
+                <p className="text-[#00BFAE]/80 text-sm">مستخدم</p>
               </CardContent>
             </Card>
           )}

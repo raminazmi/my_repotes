@@ -47,7 +47,7 @@ export function SidebarMenuButton({ children, asChild = false, className = "" })
   if (asChild) return children;
   return (
     <button
-      className={`w-full flex items-center gap-3 px-4 py-2 rounded-lg text-right text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition font-medium ${className}`}
+      className={`w-full flex items-center gap-3 px-4 py-2 rounded-lg text-right text-gray-700 hover:bg-[#00BFAE]/10 hover:text-[#009A8E] transition font-medium ${className}`}
     >
       {children}
     </button>

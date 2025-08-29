@@ -5,7 +5,7 @@ export function ReportCard({ title, description, type, count, icon, status, onCl
   const statusColors = {
     active: 'bg-green-100 text-green-800',
     pending: 'bg-yellow-100 text-yellow-800',
-    completed: 'bg-blue-100 text-blue-800'
+    completed: 'bg-[#00BFAE]/20 text-[#009A8E]'
   };
 
   const statusLabels = {

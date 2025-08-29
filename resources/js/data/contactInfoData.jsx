@@ -4,7 +4,7 @@ export const contactInfo = [
     {
         icon: <Mail className="w-6 h-6 text-blue-500" />,
         title: "البريد الإلكتروني",
-        content: "support@eduforms.sa",
+        content: "support@myreports.sa",
         description: "راسلنا في أي وقت وسنرد خلال 24 ساعة"
     },
     {

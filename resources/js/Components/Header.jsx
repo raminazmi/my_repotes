@@ -9,7 +9,7 @@ export default function Header() {
     const sidebarRef = useRef(null);
     const menuButtonRef = useRef(null);
     const userDropdownRef = useRef(null);
-    
+
     const { auth } = usePage().props;
     const user = auth?.user;
 
@@ -30,7 +30,7 @@ export default function Header() {
         ) {
             setIsSidebarOpen(false);
         }
-        
+
         if (
             userDropdownRef.current &&
             !userDropdownRef.current.contains(event.target)
@@ -65,13 +65,13 @@ export default function Header() {
                 onClick={() => setIsUserDropdownOpen(!isUserDropdownOpen)}
                 className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-100 transition-colors"
             >
-                <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                <div className="w-8 h-8 bg-gradient-to-r from-[#00BFAE] to-[#009A8E] rounded-full flex items-center justify-center text-white text-sm font-bold">
                     {user.name.charAt(0)}
                 </div>
                 <span className="font-medium text-gray-700">{user.name}</span>
                 <FaChevronDown className={`w-4 h-4 text-gray-500 transition-transform ${isUserDropdownOpen ? 'rotate-180' : ''}`} />
             </button>
-            
+
             {isUserDropdownOpen && (
                 <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
                     <div className="px-4 py-2 border-b border-gray-100">
@@ -109,12 +109,12 @@ export default function Header() {
     const AuthButtons = () => (
         <>
             <Link href={route('login')}>
-                <Button variant="outline" className="border-blue-200 hover:bg-blue-50">
+                <Button variant="outline" className="border-[#009A8E] hover:bg-[#00BFAE]/10">
                     تسجيل الدخول
                 </Button>
             </Link>
             <Link href={route('register')}>
-                <Button className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700">
+                <Button className="bg-gradient-to-r from-[#00BFAE] to-[#009A8E] hover:from-[#37a299] hover:to-[#23bbae]">
                     إنشاء حساب
                 </Button>
             </Link>
@@ -129,7 +129,7 @@ export default function Header() {
                         {/* Logo */}
                         <Link href="/" className="flex items-center gap-4">
                             <div className="relative">
-                                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg">
+                                <div className="w-12 h-12  bg-gradient-to-r from-[#00BFAE] to-[#009A8E] rounded-xl flex items-center justify-center shadow-lg">
                                     <FaBookOpen className="w-7 h-7 text-white" />
                                 </div>
                                 <div className="absolute -top-1 -right-1 w-4 h-4 bg-yellow-400 rounded-full flex items-center justify-center">
@@ -137,8 +137,8 @@ export default function Header() {
                                 </div>
                             </div>
                             <div>
-                                <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                                    EduForms
+                                <h1 className="text-2xl font-bold bg-gradient-to-r from-[#00BFAE] to-[#009A8E] bg-clip-text text-transparent">
+                                    My Reports
                                 </h1>
                                 <p className="text-sm text-gray-600 font-medium">
                                     صديق المعلم والإداري
@@ -151,7 +151,7 @@ export default function Header() {
                                 <Link
                                     key={index}
                                     href={item.to}
-                                    className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+                                    className="text-gray-700 hover:text-[#00BFAE] transition-colors font-medium"
                                 >
                                     {item.label}
                                 </Link>
@@ -202,7 +202,7 @@ export default function Header() {
                             <Link
                                 key={index}
                                 href={item.to}
-                                className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+                                className="text-gray-700 hover:text-[#00BFAE] transition-colors font-medium"
                                 onClick={() => setIsSidebarOpen(false)}
                             >
                                 {item.label}
@@ -213,7 +213,7 @@ export default function Header() {
                     {user ? (
                         <div className="mt-8 space-y-3">
                             <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
-                                <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                                <div className="w-8 h-8 bg-gradient-to-r from-[#00BFAE] to-[#009A8E] rounded-full flex items-center justify-center text-white text-sm font-bold">
                                     {user.name.charAt(0)}
                                 </div>
                                 <div className="flex-1 min-w-0">
@@ -253,7 +253,7 @@ export default function Header() {
                                 </Button>
                             </Link>
                             <Link href={route('register')} onClick={() => setIsSidebarOpen(false)}>
-                                <Button className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700">
+                                <Button className="w-full bg-gradient-to-r from-[#00BFAE] to-[#009A8E] hover:from-[#37a299] hover:to-[#23bbae]">
                                     إنشاء حساب
                                 </Button>
                             </Link>

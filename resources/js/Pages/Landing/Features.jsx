@@ -8,24 +8,24 @@ import { features } from "@/data/featuresData.jsx";
 
 export default function Features() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
+    <div className="min-h-screen bg-gradient-to-br from-[#00BFAE]/5 via-[#009A8E]/10 to-[#008B7A]/15">
       <Header />
       {/* Hero Section */}
       <section className="py-20 px-6 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-purple-600/10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#00BFAE]/5 to-[#009A8E]/10"></div>
         <div className="max-w-7xl mx-auto text-center relative">
-          <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-medium mb-8">
+          <div className="inline-flex items-center gap-2 bg-[#00BFAE]/10 text-[#009A8E] px-4 py-2 rounded-full text-sm font-medium mb-8">
             <Zap className="w-4 h-4" />
-            اكتشف قوة EduForms في تسهيل عملك التعليمي
+            اكتشف قوة My Reports في تسهيل عملك التعليمي
           </div>
           <h1 className="text-4xl md:text-6xl font-bold text-gray-800 mb-6 leading-tight">
-            <span className="block">ميزات EduForms</span>
-            <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <span className="block">ميزات My Reports</span>
+            <span className="block bg-gradient-to-r from-[#00BFAE] to-[#009A8E] bg-clip-text text-transparent">
               المتطورة
             </span>
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
-            تعرف على الميزات التي تجعل EduForms الخيار الأول للمعلمين والإداريين في المملكة العربية السعودية
+            تعرف على الميزات التي تجعل My Reports الخيار الأول للمعلمين والإداريين في المملكة العربية السعودية
           </p>
         </div>
       </section>
@@ -75,20 +75,20 @@ export default function Features() {
         </div>
       </section>
       {/* CTA Section */}
-      <section className="py-20 px-6 bg-gradient-to-r from-blue-600 to-purple-700 text-white">
+      <section className="py-20 px-6 bg-gradient-to-r from-[#00BFAE] to-[#009A8E] text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-6">جرب جميع هذه الميزات اليوم</h2>
           <p className="text-xl mb-8 opacity-95 leading-relaxed">
-            ابدأ مجاناً واكتشف كيف يمكن لـ EduForms أن يوفر عليك الوقت والجهد
+            ابدأ مجاناً واكتشف كيف يمكن لـ My Reports أن يوفر عليك الوقت والجهد
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/signup">
-              <Button size="lg" variant="outline" className="px-8 py-3 text-lg bg-white text-blue-600 hover:bg-gray-100 font-bold">
+              <Button size="lg" variant="outline" className="px-8 py-3 text-lg bg-white text-[#00BFAE] hover:bg-gray-100 font-bold">
                 ابدأ مجاناً الآن
               </Button>
             </Link>
             <Link href="/pricing">
-              <Button size="lg" variant="secondary" className="px-8 py-3 text-lg bg-white text-blue-600 hover:bg-gray-100 font-bold">
+              <Button size="lg" variant="secondary" className="px-8 py-3 text-lg bg-white text-[#00BFAE] hover:bg-gray-100 font-bold">
                 مشاهدة الباقات
               </Button>
             </Link>

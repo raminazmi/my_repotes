@@ -33,7 +33,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
+    <div className="min-h-screen bg-gradient-to-br from-[#00BFAE]/5 via-[#009A8E]/10 to-[#008B7A]/15">
       <Header />
       {/* Hero Section */}
       <section className="py-20 px-6 text-center">
@@ -74,7 +74,7 @@ export default function Contact() {
             {/* Contact Form */}
             <div>
               <Card className="shadow-xl border-0">
-                <CardHeader className="bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-t-lg">
+                <CardHeader className="bg-gradient-to-r from-[#00BFAE] to-[#009A8E] text-white rounded-t-lg">
                   <CardTitle className="text-2xl text-center">أرسل لنا رسالة</CardTitle>
                 </CardHeader>
                 <CardContent className="p-8">
@@ -128,7 +128,7 @@ export default function Contact() {
                     </div>
                     <Button
                       type="submit"
-                      className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 py-3 text-lg font-bold"
+                      className="w-full bg-gradient-to-r from-[#00BFAE] to-[#009A8E] hover:from-[#37a299] hover:to-[#23bbae] py-3 text-lg font-bold"
                       disabled={loading}
                     >
                       {loading ? "جاري الإرسال..." : "إرسال الرسالة"}
@@ -143,7 +143,7 @@ export default function Contact() {
                 <h3 className="text-2xl font-bold text-gray-800 mb-4">لماذا تتواصل معنا؟</h3>
                 <ul className="space-y-4">
                   <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
+                    <div className="w-2 h-2 bg-[#009A8E] rounded-full mt-2"></div>
                     <div>
                       <h4 className="font-semibold text-gray-800">الدعم الفني</h4>
                       <p className="text-gray-600">مساعدة في استخدام المنصة وحل أي مشاكل تقنية</p>

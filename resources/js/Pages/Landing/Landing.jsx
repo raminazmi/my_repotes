@@ -24,36 +24,36 @@ export default function Landing() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
+    <div className="min-h-screen bg-gradient-to-br from-[#00BFAE]/5 via-[#009A8E]/10 to-[#008B7A]/15">
       <Header />
       {/* Hero Section */}
       <section className="py-20 px-6 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-purple-600/10"></div>
         <div className="max-w-7xl mx-auto text-center relative">
-          <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-xs md:text-sm font-medium mb-8">
+          <div className="inline-flex items-center gap-2 bg-[#00BFAE]/10 text-[#009A8E] px-4 py-2 rounded-full text-xs md:text-sm font-medium mb-8">
             <Zap className="w-3 h-3 md:w-4 md:h-4" />
             إيماناً بأهمية الوقت لدى المعلم والإداري في التعليم
           </div>
           <h1 className="text-4xl md:text-6xl font-bold text-gray-800 mb-6 leading-tight">
             <span className="block">صديق المعلم</span>
-            <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-[#00BFAE] to-[#009A8E] bg-clip-text text-transparent">
               والإداري
             </span>
           </h1>
           <p className="text-xl text-gray-600 mb-4 max-w-4xl mx-auto leading-relaxed">
             وفرنا لكم تقارير مختصرة تسهّل عليك
           </p>
-          <p className="text-lg text-blue-600 mb-8 max-w-3xl mx-auto font-medium">
+          <p className="text-lg text-[#00BFAE] mb-8 max-w-3xl mx-auto font-medium">
             العمل والتطوير وسرعة الإنجاز، كل ذلك مباشرة من جوالك! ✨ 📱
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
             <Link href={route('register')}>
-              <Button size="lg" className="px-10 py-4 text-lg bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 shadow-lg">
+              <Button size="lg" className="px-10 py-4 text-lg bg-gradient-to-r from-[#00BFAE] to-[#009A8E] hover:from-[#37a299] hover:to-[#23bbae] shadow-lg">
                 ابدأ رحلتك مجاناً
               </Button>
             </Link>
             <Link href={route('register')}>
-              <Button variant="outline" size="lg" className="px-10 py-4 text-lg border-2 border-blue-200 hover:bg-blue-50 text-blue-600  shadow-lg">
+              <Button variant="outline" size="lg" className="px-10 py-4 text-lg border-2 border-[#009A8E] hover:bg-[#00BFAE]/10 text-[#009A8E] shadow-lg">
                 تعرف على المزيد
               </Button>
             </Link>
@@ -87,7 +87,7 @@ export default function Landing() {
       <section id="features" className="py-20 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">ميزات EduForms المتطورة</h2>
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">ميزات My Reports المتطورة</h2>
             <p className="text-xl text-gray-600">كل ما تحتاجه لإنشاء وإدارة النماذج التعليمية بسهولة</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -175,7 +175,7 @@ export default function Landing() {
                     ))}
                   </ul>
                   <Button
-                    className={`w-full ${plan.popular ? 'bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700' : 'bg-gray-600 hover:bg-gray-700'} text-white font-bold py-3`}
+                    className={`w-full ${plan.popular ? 'bg-gradient-to-r from-[#00BFAE] to-[#009A8E] hover:from-[#37a299] hover:to-[#23bbae]' : 'bg-gray-600 hover:bg-gray-700'} text-white font-bold py-3`}
                   >
                     {plan.price === "0" ? "ابدأ مجاناً" : "اختيار الباقة"}
                   </Button>

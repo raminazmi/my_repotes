@@ -90,7 +90,7 @@ class FormSeeder extends Seeder
                 'is_active' => true,
                 'user_id' => 1,
                 'is_template' => true,
-                'image' => '/assets/StrategyBriefPreview.jpg', // أضف هذا السطر
+                'image' => '/assets/StrategyBriefPreview.jpg',
             ]
         );
 
@@ -99,50 +99,50 @@ class FormSeeder extends Seeder
             ['template' => 'report_moe_3'],
             [
                 'title' => 'تقرير تنفيذ برنامج (تغطية) 4 شواهد',
-                'description' => 'نموذج لتوثيق تنفيذ برنامج مع 4 شواهد',
+                'description' => 'نموذج تقرير تنفيذ برنامج مع 4 شواهد',
                 'type' => 'report',
                 'template' => 'report_moe_3',
                 'settings' => json_encode([
                     'templateBlocks' => [
                         [
                             'type' => 'header',
-                            'label' => 'معلومات المدرسة',
+                            'label' => 'معلومات البرنامج',
                             'fields' => [
-                                ['label' => 'اسم المدرسة', 'type' => 'text', 'required' => true],
                                 ['label' => 'اسم البرنامج', 'type' => 'text', 'required' => true],
-                                ['label' => 'اسم منفذ البرنامج أو المنفذين', 'type' => 'text', 'required' => true],
-                                ['label' => 'مكان التنفيذ', 'type' => 'text', 'required' => true],
-                                ['label' => 'المستهدفون', 'type' => 'text', 'required' => true],
-                                ['label' => 'عدد المستهدفين', 'type' => 'text', 'required' => true],
                                 ['label' => 'تاريخ التنفيذ', 'type' => 'date', 'required' => true],
-                                ['label' => 'حساب تويتر', 'type' => 'text', 'required' => false],
+                                ['label' => 'المدة الزمنية', 'type' => 'text', 'required' => true],
+                                ['label' => 'عدد المستفيدين', 'type' => 'number', 'required' => true],
+                                ['label' => 'المكان', 'type' => 'text', 'required' => true],
                             ],
                         ],
                         [
                             'type' => 'section',
-                            'label' => 'الأهداف',
+                            'label' => 'تفاصيل البرنامج',
                             'fields' => [
-                                ['label' => 'الهدف الأول', 'type' => 'text', 'required' => false],
-                                ['label' => 'الهدف الثاني', 'type' => 'text', 'required' => false],
-                                ['label' => 'الهدف الثالث', 'type' => 'text', 'required' => false],
-                                ['label' => 'الهدف الرابع', 'type' => 'text', 'required' => false],
-                                ['label' => 'الهدف الخامس', 'type' => 'text', 'required' => false],
+                                ['label' => 'أهداف البرنامج', 'type' => 'text', 'required' => true],
+                                ['label' => 'الأنشطة المنفذة', 'type' => 'text', 'required' => true],
+                                ['label' => 'النتائج المحققة', 'type' => 'text', 'required' => true],
+                                ['label' => 'التوصيات', 'type' => 'text', 'required' => false],
+                            ],
+                        ],
+                        [
+                            'type' => 'section',
+                            'label' => 'بيانات المنفذ',
+                            'fields' => [
+                                ['label' => 'اسم المنفذ', 'type' => 'text', 'required' => true],
+                                ['label' => 'الوظيفة', 'type' => 'text', 'required' => true],
+                                ['label' => 'رقم الهاتف', 'type' => 'text', 'required' => false],
+                                ['label' => 'البريد الإلكتروني', 'type' => 'text', 'required' => false],
                             ],
                         ],
                         [
                             'type' => 'images',
-                            'label' => 'الشواهد',
+                            'label' => 'صور الشواهد',
                             'fields' => [
-                                ['label' => 'الشاهد الأول', 'type' => 'image', 'required' => false],
-                                ['label' => 'الشاهد الثاني', 'type' => 'image', 'required' => false],
-                                ['label' => 'الشاهد الثالث', 'type' => 'image', 'required' => false],
-                                ['label' => 'الشاهد الرابع', 'type' => 'image', 'required' => false],
-                                ['label' => 'الشاهد الخامس', 'type' => 'image', 'required' => false],
-                                ['label' => 'الشاهد السادس', 'type' => 'image', 'required' => false],
-                                ['label' => 'الشاهد السابع', 'type' => 'image', 'required' => false],
-                                ['label' => 'الشاهد الثامن', 'type' => 'image', 'required' => false],
-                                ['label' => 'الشاهد التاسع', 'type' => 'image', 'required' => false],
-                                ['label' => 'الشاهد العاشر', 'type' => 'image', 'required' => false],
+                                ['label' => 'الشاهد الأول', 'type' => 'image', 'required' => true],
+                                ['label' => 'الشاهد الثاني', 'type' => 'image', 'required' => true],
+                                ['label' => 'الشاهد الثالث', 'type' => 'image', 'required' => true],
+                                ['label' => 'الشاهد الرابع', 'type' => 'image', 'required' => true],
                             ],
                         ],
                     ],
@@ -150,6 +150,57 @@ class FormSeeder extends Seeder
                 'is_active' => true,
                 'user_id' => 1,
                 'is_template' => true,
+                'image' => '/assets/ReportMoe3Preview.jpg',
+            ]
+        );
+
+        // قالب استبيان أنماط التعلم
+        Form::updateOrCreate(
+            ['template' => 'learning_styles_survey'],
+            [
+                'title' => 'استبيان أنماط التعلم',
+                'description' => 'استبيان لتحديد أنماط التعلم المفضلة',
+                'type' => 'survey',
+                'template' => 'learning_styles_survey',
+                'settings' => json_encode([
+                    'templateBlocks' => [
+                        [
+                            'type' => 'header',
+                            'label' => 'معلومات الطالب',
+                            'fields' => [
+                                ['label' => 'اسم الطالب', 'type' => 'text', 'required' => true],
+                                ['label' => 'المرحلة الدراسية', 'type' => 'text', 'required' => true],
+                                ['label' => 'الفصل', 'type' => 'text', 'required' => true],
+                                ['label' => 'تاريخ الاستبيان', 'type' => 'date', 'required' => true],
+                            ],
+                        ],
+                        [
+                            'type' => 'section',
+                            'label' => 'أسئلة الاستبيان',
+                            'fields' => [
+                                ['label' => 'السؤال الأول', 'type' => 'checkbox', 'required' => false, 'style' => 'visual'],
+                                ['label' => 'السؤال الثاني', 'type' => 'checkbox', 'required' => false, 'style' => 'auditory'],
+                                ['label' => 'السؤال الثالث', 'type' => 'checkbox', 'required' => false, 'style' => 'reading'],
+                                ['label' => 'السؤال الرابع', 'type' => 'checkbox', 'required' => false, 'style' => 'kinesthetic'],
+                                ['label' => 'السؤال الخامس', 'type' => 'checkbox', 'required' => false, 'style' => 'visual'],
+                                ['label' => 'السؤال السادس', 'type' => 'checkbox', 'required' => false, 'style' => 'visual'],
+                            ],
+                        ],
+                        [
+                            'type' => 'section',
+                            'label' => 'التوقيعات',
+                            'fields' => [
+                                ['label' => 'توقيع الطالب', 'type' => 'text', 'required' => true],
+                                ['label' => 'توقيع المعلم', 'type' => 'text', 'required' => true],
+                                ['label' => 'توقيع ولي الأمر', 'type' => 'text', 'required' => false],
+                            ],
+                        ],
+                    ],
+                ]),
+                'is_active' => true,
+                'user_id' => 1,
+                'is_template' => true,
+                'image' => '/assets/LearningStylesPreview.jpg',
             ]
         );
     }

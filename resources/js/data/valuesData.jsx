@@ -4,7 +4,7 @@ export const values = [
     {
         icon: <Target className="w-8 h-8 text-blue-500" />,
         title: "الهدف",
-        description: "تسهيل العمل الإداري والتعليمي للمعلمين والإداريين من خلال أدوات EduFormsة متطورة وسهلة الاستخدام"
+        description: "تسهيل العمل الإداري والتعليمي للمعلمين والإداريين من خلال أدوات My Reports متطورة وسهلة الاستخدام"
     },
     {
         icon: <Users className="w-8 h-8 text-green-500" />,

@@ -3,9 +3,11 @@ import { Head, useForm, Link, router } from '@inertiajs/react';
 import { useState } from "react";
 import FormPreview from '@/Pages/Dashboard/Forms/FormPreview';
 
-export default function TemplateShow({ form, auth, report }) {
+export default function FormShow({ form, auth, report }) {
   const template = form;
-  if (!template || !template.settings || !Array.isArray(template.settings.templateBlocks)) {
+
+  // التأكد من أن template موجود وله settings صحيحة
+  if (!template) {
     return (
       <DashboardLayout>
         <div className="text-center text-red-600 py-10">
@@ -14,48 +16,12 @@ export default function TemplateShow({ form, auth, report }) {
       </DashboardLayout>
     );
   }
+
   const [showPreview, setShowPreview] = useState(!!report);
   const [activeSection, setActiveSection] = useState(0);
   const { data, setData, post, processing, errors } = useForm({
     answers: report?.data || {},
   });
-
-  // التحقق مما إذا كان القسم الحالي هو قسم الشواهد
-  const isWitnessSection = () => {
-    const sectionLabel = template.settings.templateBlocks[activeSection]?.label || '';
-    return sectionLabel.includes('شواهد') || sectionLabel.includes('صور');
-  };
-
-  // الحصول على الشواهد الخاصة بالقسم الحالي فقط
-  const getCurrentWitnesses = () => {
-    const currentBlockId = template.settings.templateBlocks[activeSection]?.id;
-    return data.answers.witnesses?.filter(field => field.blockId === currentBlockId);
-  };
-
-  // إضافة شاهد جديد
-  const handleAddWitness = () => {
-    const currentBlockId = template.settings.templateBlocks[activeSection]?.id;
-    const currentWitnesses = getCurrentWitnesses();
-    if (currentWitnesses.length < 10) {
-      setData("answers", {
-        ...data.answers,
-        witnesses: [
-          ...(data.answers.witnesses || []),
-          {
-            type: 'image',
-            label: `الشاهد ${currentWitnesses.length + 1}`,
-            blockId: currentBlockId,
-            required: false
-          }
-        ]
-      });
-    }
-  };
-
-  // حذف صورة شاهد
-  const handleRemoveWitness = (label) => {
-    setData("answers", { ...data.answers, [label]: null });
-  };
 
   const handleChange = (field, value) => {
     setData("answers", { ...data.answers, [field]: value });
@@ -73,7 +39,7 @@ export default function TemplateShow({ form, auth, report }) {
       formData.append(`answers[${key}]`, data.answers[key]);
     });
 
-    post(route('user.templates.submit', template.id), {
+    post(route('forms.submit', template.id), {
       data: formData,
       onSuccess: () => {
         setShowPreview(true);
@@ -89,7 +55,7 @@ export default function TemplateShow({ form, auth, report }) {
 
   const handleDelete = () => {
     if (report && confirm('هل أنت متأكد من حذف هذا التقرير؟')) {
-      router.delete(route('user.reports.destroy', report.id));
+      router.delete(route('reports.destroy', report.id));
     }
   };
 
@@ -109,16 +75,15 @@ export default function TemplateShow({ form, auth, report }) {
           </div>
         )}
         {!showPreview ? (
-          <div className="bg-white rounded-xl shadow-md overflow-hidden">
+          <div className="bg-white rounded-xl shadow-sm p-6 mb-6 border border-[#00BFAE]/20">
             <div className="flex border-b">
               {template?.settings?.templateBlocks?.map((block, idx) => (
                 <button
                   key={idx}
-                  className={`px-6 py-3 font-medium text-sm ${
-                    activeSection === idx 
-                      ? 'border-b-2 border-blue-600 text-blue-600 bg-blue-50' 
-                      : 'text-gray-600 hover:text-gray-900'
-                  }`}
+                  className={`px-6 py-3 font-medium text-sm ${activeSection === idx
+                    ? 'border-b-2 border-[#009A8E] text-[#009A8E] bg-[#00BFAE]/10'
+                    : 'text-gray-600 hover:text-gray-900'
+                    }`}
                   onClick={() => setActiveSection(idx)}
                 >
                   {block.label || `القسم ${idx + 1}`}
@@ -128,7 +93,7 @@ export default function TemplateShow({ form, auth, report }) {
             <form onSubmit={handlePreview} className="p-6" encType="multipart/form-data">
               <div className="mb-6">
                 <h3 className="font-bold text-lg text-gray-800 mb-3 flex items-center">
-                  <span className="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center ml-2">
+                  <span className="w-8 h-8 rounded-full bg-[#00BFAE]/20 text-[#009A8E] flex items-center justify-center ml-2">
                     {activeSection + 1}
                   </span>
                   {template.settings.templateBlocks[activeSection].label || `القسم ${activeSection + 1}`}
@@ -179,16 +144,14 @@ export default function TemplateShow({ form, auth, report }) {
                                 onChange={e => setData("answers", { ...data.answers, [field.label]: e.target.checked })}
                                 required={field.required}
                               />
-                              <div className={`block w-14 h-7 rounded-full transition-all duration-300 ${
-                                data.answers[field.label] 
-                                  ? 'bg-blue-600' 
-                                  : 'bg-gray-300'
-                              }`}></div>
-                              <div className={`absolute left-1 top-1 bg-white w-5 h-5 rounded-full transition-all duration-300 ${
-                                data.answers[field.label] 
-                                  ? 'transform translate-x-7' 
-                                  : ''
-                              }`}></div>
+                              <div className={`block w-14 h-7 rounded-full transition-all duration-300 ${data.answers[field.label]
+                                ? 'bg-[#009A8E]'
+                                : 'bg-gray-300'
+                                }`}></div>
+                              <div className={`absolute left-1 top-1 bg-white w-5 h-5 rounded-full transition-all duration-300 ${data.answers[field.label]
+                                ? 'transform translate-x-7'
+                                : ''
+                                }`}></div>
                             </div>
                             <span>{field.label}</span>
                           </label>
@@ -226,14 +189,14 @@ export default function TemplateShow({ form, auth, report }) {
                   {activeSection < totalSections - 1 ? (
                     <button
                       type="button"
-                      className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-lg font-medium flex items-center"
+                      className="bg-[#009A8E] hover:bg-[#008B7A] text-white px-5 py-2.5 rounded-lg font-medium flex items-center"
                       onClick={() => setActiveSection(activeSection + 1)}
                     >
                       التالي
                     </button>
                   ) : (
-                    <button 
-                      type="submit" 
+                    <button
+                      type="submit"
                       className="bg-green-600 hover:bg-green-700 text-white px-5 py-2.5 rounded-lg font-medium flex items-center"
                       disabled={processing}
                     >
@@ -252,15 +215,15 @@ export default function TemplateShow({ form, auth, report }) {
                 <div className="flex gap-2">
                   {report ? (
                     <>
-                      <Link 
-                        href={route('reports.export', { report: report.id, type: 'pdf' })} 
-                        className="flex items-center gap-1 bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded shadow font-medium"
+                      <Link
+                        href={route('reports.export', { report: report.id, type: 'pdf' })}
+                        className="flex items-center gap-1 bg-[#009A8E] hover:bg-[#008B7A] text-white px-3 py-2 rounded shadow font-medium"
                         target="_blank"
                       >
                         PDF
                       </Link>
-                      <Link 
-                        href={route('reports.export', { report: report.id, type: 'png' })} 
+                      <Link
+                        href={route('reports.export', { report: report.id, type: 'png' })}
                         className="flex items-center gap-1 bg-purple-600 hover:bg-purple-700 text-white px-3 py-2 rounded shadow font-medium"
                         target="_blank"
                       >
@@ -277,7 +240,7 @@ export default function TemplateShow({ form, auth, report }) {
                     <>
                       <button
                         onClick={handleSubmit}
-                        className="flex items-center gap-1 bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded shadow font-medium"
+                        className="flex items-center gap-1 bg-[#009A8E] hover:bg-[#008B7A] text-white px-3 py-2 rounded shadow font-medium"
                         disabled={processing}
                       >
                         حفظ التقرير
@@ -289,10 +252,10 @@ export default function TemplateShow({ form, auth, report }) {
                   )}
                 </div>
               </div>
-              <FormPreview 
-                template={template} 
-                answers={report ? report.data : data.answers} 
-                user={auth?.user || null} 
+              <FormPreview
+                template={template}
+                answers={report ? report.data : data.answers}
+                user={auth?.user || null}
               />
             </div>
           </div>

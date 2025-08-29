@@ -33,7 +33,7 @@ export default function Privacy() {
       content: [
         "تقديم الخدمات المطلوبة وتخصيص المحتوى",
         "إرسال إشعارات مهمة حول حسابك والخدمة",
-        "تحسين وتطوير منصة EduForms",
+        "تحسين وتطوير منصة My Reports",
         "التواصل معك للدعم الفني والمساعدة عند الحاجة"
       ]
     },
@@ -50,20 +50,20 @@ export default function Privacy() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
+    <div className="min-h-screen bg-gradient-to-br from-[#00BFAE]/5 via-[#009A8E]/10 to-[#008B7A]/15">
       <Header />
 
       {/* Hero Section */}
       <section className="py-20 px-6 text-center">
         <div className="max-w-4xl mx-auto">
           <div className="flex justify-center mb-6">
-            <div className="p-4 bg-blue-100 rounded-full">
-              <Shield className="w-12 h-12 text-blue-600" />
+            <div className="p-4 bg-[#00BFAE]/10 rounded-full">
+              <Shield className="w-12 h-12 text-[#00BFAE]" />
             </div>
           </div>
           <h1 className="text-5xl font-bold text-gray-800 mb-6">سياسة الخصوصية</h1>
           <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-            نحن في EduForms نلتزم بحماية خصوصيتك وأمان بياناتك. هذه السياسة توضح كيف نجمع ونستخدم ونحمي معلوماتك الشخصية.
+            نحن في My Reports نلتزم بحماية خصوصيتك وأمان بياناتك. هذه السياسة توضح كيف نجمع ونستخدم ونحمي معلوماتك الشخصية.
           </p>
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
             <p className="text-blue-800 font-medium">
@@ -80,8 +80,8 @@ export default function Privacy() {
           <Card className="p-8 shadow-lg border-0">
             <h2 className="text-2xl font-bold text-gray-800 mb-4">مقدمة</h2>
             <p className="text-gray-600 leading-relaxed mb-4">
-              مرحباً بك في EduForms. نحن شركة تقنية تعليمية مقرها في المملكة العربية السعودية، نقدم
-              منصة EduFormsة لإنشاء وإدارة النماذج والتقارير التعليمية للمعلمين والإداريين.
+              مرحباً بك في My Reports. نحن شركة تقنية تعليمية مقرها في المملكة العربية السعودية، نقدم
+              منصة My Reports لإنشاء وإدارة النماذج والتقارير التعليمية للمعلمين والإداريين.
             </p>
             <p className="text-gray-600 leading-relaxed">
               هذه السياسة تشرح بوضوح كيف نتعامل مع بياناتك الشخصية، وما هي حقوقك، وكيف يمكنك
@@ -104,7 +104,7 @@ export default function Privacy() {
                 <ul className="space-y-3">
                   {section.content.map((item, itemIndex) => (
                     <li key={itemIndex} className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                      <div className="w-2 h-2 bg-[#009A8E] rounded-full mt-2 flex-shrink-0"></div>
                       <span className="text-gray-600 leading-relaxed">{item}</span>
                     </li>
                   ))}
@@ -121,15 +121,15 @@ export default function Privacy() {
             </p>
             <ul className="space-y-2 mb-4">
               <li className="flex items-start gap-3">
-                <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
+                <div className="w-2 h-2 bg-[#009A8E] rounded-full mt-2"></div>
                 <span className="text-gray-600">تذكر تسجيل دخولك للجلسات المستقبلية</span>
               </li>
               <li className="flex items-start gap-3">
-                <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
+                <div className="w-2 h-2 bg-[#009A8E] rounded-full mt-2"></div>
                 <span className="text-gray-600">حفظ تفضيلاتك وإعداداتك الشخصية</span>
               </li>
               <li className="flex items-start gap-3">
-                <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
+                <div className="w-2 h-2 bg-[#009A8E] rounded-full mt-2"></div>
                 <span className="text-gray-600">تحليل كيفية استخدام المنصة لتحسينها</span>
               </li>
             </ul>
@@ -146,15 +146,15 @@ export default function Privacy() {
             </p>
             <ul className="space-y-2">
               <li className="flex items-start gap-3">
-                <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
+                <div className="w-2 h-2 bg-[#009A8E] rounded-full mt-2"></div>
                 <span className="text-gray-600">خدمات الدفع الآمنة مثل Stripe للمعالجة الآمنة للمدفوعات</span>
               </li>
               <li className="flex items-start gap-3">
-                <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
+                <div className="w-2 h-2 bg-[#009A8E] rounded-full mt-2"></div>
                 <span className="text-gray-600">خدمات التحليلات لفهم استخدام المنصة وتحسينها</span>
               </li>
               <li className="flex items-start gap-3">
-                <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
+                <div className="w-2 h-2 bg-[#009A8E] rounded-full mt-2"></div>
                 <span className="text-gray-600">خدمات البريد الإلكتروني لإرسال الإشعارات المهمة</span>
               </li>
             </ul>
@@ -168,12 +168,12 @@ export default function Privacy() {
               لا تتردد في التواصل معنا:
             </p>
             <div className="space-y-2 mb-6">
-              <p className="text-gray-600"><strong>البريد الإلكتروني:</strong> privacy@eduforms.sa</p>
+              <p className="text-gray-600"><strong>البريد الإلكتروني:</strong> privacy@myreports.sa</p>
               <p className="text-gray-600"><strong>الهاتف:</strong> +966 11 123 4567</p>
               <p className="text-gray-600"><strong>العنوان:</strong> الرياض، المملكة العربية السعودية</p>
             </div>
             <Link href="/contact">
-              <Button className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700">
+              <Button className="bg-gradient-to-r from-[#00BFAE] to-[#009A8E] hover:from-[#37a299] hover:to-[#23bbae]">
                 تواصل معنا الآن
               </Button>
             </Link>
@@ -182,14 +182,14 @@ export default function Privacy() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 px-6 bg-gradient-to-r from-blue-600 to-purple-700 text-white">
+      <section className="py-16 px-6 bg-gradient-to-r from-[#00BFAE] to-[#009A8E] text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4">خصوصيتك أولويتنا</h2>
           <p className="text-lg mb-6 opacity-95">
-            نلتزم بحماية بياناتك وخصوصيتك في كل خطوة. ابدأ استخدام EduForms بثقة تامة.
+            نلتزم بحماية بياناتك وخصوصيتك في كل خطوة. ابدأ استخدام My Reports بثقة تامة.
           </p>
           <Link href="/signup">
-            <Button size="lg" variant="secondary" className="px-8 py-3 text-lg bg-white text-blue-600 hover:bg-gray-100 font-bold">
+            <Button size="lg" variant="secondary" className="px-8 py-3 text-lg bg-white text-[#00BFAE] hover:bg-gray-100 font-bold">
               ابدأ الآن بأمان
             </Button>
           </Link>

@@ -81,7 +81,7 @@ export default function StrategyBriefPreview({ answers, user }) {
         </div>
 
         {/* Footer */}
-        <div className="bg-blue-800 text-white text-center py-2 text-sm">
+        <div className="bg-[#20445a] text-white text-center py-2 text-sm">
           © وزارة التربية والتعليم
         </div>
       </div>

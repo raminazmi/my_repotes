@@ -4,7 +4,6 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ReportExportController;
-use App\Http\Controllers\TemplateUserController;
 use App\Http\Controllers\FormController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -26,11 +25,8 @@ Route::get('/signup', function () {
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-    Route::get('/templates', [TemplateUserController::class, 'index'])->name('user.templates.index');
-    Route::get('/templates/{template}', [TemplateUserController::class, 'show'])->name('user.templates.show');
-    Route::post('/templates/{template}/submit', [TemplateUserController::class, 'submit'])->name('user.templates.submit');
-    Route::delete('/reports/{report}', [TemplateUserController::class, 'destroy'])->name('user.reports.destroy');
     Route::get('/payments', [\App\Http\Controllers\PaymentController::class, 'index'])->name('payments.index');
+    
     // مسارات النماذج
     Route::get('/forms', [FormController::class, 'index'])->name('forms.index');
     Route::get('/forms/create', [FormController::class, 'create'])->name('forms.create');
@@ -39,6 +35,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/forms/{form}/edit', [FormController::class, 'edit'])->name('forms.edit');
     Route::patch('/forms/{form}', [FormController::class, 'update'])->name('forms.update');
     Route::delete('/forms/{form}', [FormController::class, 'destroy'])->name('forms.destroy');
+    Route::post('/forms/{form}/submit', [FormController::class, 'submit'])->name('forms.submit');
+    Route::delete('/reports/{report}', [FormController::class, 'destroyReport'])->name('reports.destroy');
 });
 
 Route::middleware('auth')->group(function () {
